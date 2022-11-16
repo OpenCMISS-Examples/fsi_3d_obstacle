@@ -1,0 +1,16 @@
+gfx read node 3DObstacleFluid.part0.exnode region FluidRegion;
+gfx read elem 3DObstacleFluid.part0.exelem region FluidRegion;
+
+gfx define faces egroup FluidRegion
+
+#Create the graphics window and set view angles
+gfx create window 1
+gfx modify window 1 layout 2d ortho_axes x y eye_spacing 0.25 height 1000 width 2000 
+gfx modify window 1 view eye_point 1.50 0.70 3.5 interest_point 1.50 0.70 0.0 up_vector 0.0 1.0 0.0 view_angle 40.0 near_clipping_plane 0.00001 far_clipping_plane 100.0
+
+#Display lines
+gfx modify g_element FluidRegion lines coordinate FluidGeometry 
+ 
+gfx edit scene
+gfx edit spectrum
+
